@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<!-- fichier dialogue4.xml -->
+<!DOCTYPE dialogue
+[ 
+ <!ELEMENT root (indi,fam) >
+ <!ELEMENT indi (name,sex?,birt,deat,(fams|famc)? )> 
+ <!ATTLIST indi id >
+ <!ELEMENT name (#PCDATA) >
+ <!ELEMENT sex  (#PCDATA) >
+ <!ELEMENT birt (date) >
+ <!ELEMENT deat (date) >
+ <!ELEMENT date (#PCDATA) >
+ <!ELEMENT fams (#PCDATA) >
+ <!ELEMENT famc (#PCDATA) >
+ <!ATTLIST fams id >
+ <!ATTLIST famc id >
+ <!ELEMENT fam (husb?,wife?,chil?,marr?)>
+ <!ATTLIST fam id>
+ <!ELEMENT husb (#PCDATA)>
+ <!ELEMENT wife (#PCDATA)>
+ <!ELEMENT child (#PCDATA)>
+ <!ELEMENT marr (#PCDATA)>
+]>
+

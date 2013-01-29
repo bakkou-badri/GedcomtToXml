@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
+<!-- fichier dialogue4.xml -->
+<!DOCTYPE dialogue
+[ 
+ <!ELEMENT dialogue (situation?, replique+) > 
+ <!ELEMENT situation (#PCDATA) > 
+ <!ELEMENT replique (personnage, texte) > 
+ <!ELEMENT personnage (#PCDATA) > 
+ <!ELEMENT texte (#PCDATA) > 
+]>
+<!-- extrait de Tartuffe de Molière --> 
+<dialogue> 
+<situation>acte I, Scene 1 : madame pernelle et flipote sa servante,elmire, mariane, dorine, damis, cléante.</situation> 
+<replique> 
+<personnage>madame pernelle</personnage> 
+<texte>Allons, Flipote, allons, que d'eux je me délivre.</texte> 
+</replique>
+</dialogue>
+
+
