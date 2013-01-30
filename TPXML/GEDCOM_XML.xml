@@ -3,22 +3,29 @@
 <!DOCTYPE dialogue
 [ 
  <!ELEMENT root (indi,fam) >
- <!ELEMENT indi (name,sex?,birt,deat,(fams|famc)? )> 
- <!ATTLIST indi id >
+ <!ELEMENT indi (name,sex?,buri?,refn?,(fams|famc)*,birt?,deat?,title?)> 
+ <!ATTLIST indi id ID #REQUIRED >
  <!ELEMENT name (#PCDATA) >
  <!ELEMENT sex  (#PCDATA) >
- <!ELEMENT birt (date) >
- <!ELEMENT deat (date) >
+ <!ELEMENT buri (#PCDATA) >
+ <!ELEMENT refn (#PCDATA) >
+ <!ELEMENT birt (date?,plac?) >
+ <!ELEMENT deat (date?,plac?) >
  <!ELEMENT date (#PCDATA) >
+ <!ELEMENT plac (#PCDATA) >
  <!ELEMENT fams (#PCDATA) >
  <!ELEMENT famc (#PCDATA) >
- <!ATTLIST fams id >
- <!ATTLIST famc id >
- <!ELEMENT fam (husb?,wife?,chil?,marr?)>
- <!ATTLIST fam id>
+ <!ATTLIST fams id IDREF #REQUIRED >
+ <!ATTLIST famc id IDREF #REQUIRED>
+ <!ELEMENT fam (husb?,wife?,chil*,marr?)>
+ <!ATTLIST fam id ID REQUIRED>
  <!ELEMENT husb (#PCDATA)>
+ <!ATTLIST husb id ID REQUIRED>
  <!ELEMENT wife (#PCDATA)>
+ <!ATTLIST wife id ID REQUIRED>
  <!ELEMENT child (#PCDATA)>
- <!ELEMENT marr (#PCDATA)>
+ <!ATTLIST child id ID REQUIRED>
+ <!ELEMENT marr (date?,plac?)>
+ <!ATTLIST marr id IDREF REQUIRED>
 ]>
 
