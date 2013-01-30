@@ -9,9 +9,10 @@
  <!ELEMENT sex  (#PCDATA) >
  <!ELEMENT buri (#PCDATA) >
  <!ELEMENT refn (#PCDATA) >
- <!ELEMENT birt (date?) >
- <!ELEMENT deat (date?) >
+ <!ELEMENT birt (date?,plac?) >
+ <!ELEMENT deat (date?,plac?) >
  <!ELEMENT date (#PCDATA) >
+ <!ELEMENT plac (#PCDATA) >
  <!ELEMENT fams (#PCDATA) >
  <!ELEMENT famc (#PCDATA) >
  <!ATTLIST fams id IDREF #REQUIRED >
@@ -24,7 +25,7 @@
  <!ATTLIST wife id ID REQUIRED>
  <!ELEMENT child (#PCDATA)>
  <!ATTLIST child id ID REQUIRED>
- <!ELEMENT marr (#PCDATA)>
+ <!ELEMENT marr (date?,plac?)>
  <!ATTLIST marr id IDREF REQUIRED>
 ]>
 
