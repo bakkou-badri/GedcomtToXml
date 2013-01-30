@@ -1,25 +1,39 @@
 0 HEAD
-0 @I1@ INDI
-  1 NAME John /Begood/
+0 @I01@ INDI
+  1 NAME John /Doe/
   1 SEX M
+  1 BIRT
+    2 DATE 23 JAN 1961
+    2 PLAC Australia
+  1 DEAT
+    2 DATE 8 JUL 1988
+    2 PLAC Scotland
   1 FAMS @F1@
-
-0 @I2@ INDI
-  1 NAME Ada /Begood/
-  1 FAMS @F1@
-
-0 @I3@ INDI
-  1 NAME Fred /Begood/
-  1 FAMC @F1@
-
-0 @I4@ INDI
-  1 NAME Lea /Begood/
+0 @I02@ INDI
+  1 NAME Rosanna /Housewife/
   1 SEX F
+  1 BIRT
+    2 DATE 15 DEC 1968
+    2 PLAC Canada
+  1 DEAT
+    2 DATE 8 JUL 1988
+    2 PLAC Scotland
+  1 FAMS @F1@
+0 @I03@ INDI
+  1 NAME Joe /Doe/
+  1 SEX M
+  1 BIRT
+    2 DATE 15 JUN 1988
+    2 PLAC United States
+  1 DEAT
+    2 DATE 8 JUL 1988
+    2 PLAC Scotland
   1 FAMC @F1@
-
 0 @F1@ FAM
-  1 HUSB @I1@
-  1 WIFE @I2@
-  1 CHIL @I3@
-  1 CHIL @I4@
+  1 HUSB @I01@
+  1 WIFE @I02@
+  1 CHIL @I03@
+  1 MARR
+    2 DATE 7 AUG 1987
+    2 PLAC United States
 0 TRLR

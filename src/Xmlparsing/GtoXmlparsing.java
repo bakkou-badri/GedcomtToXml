@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 
+import javax.swing.text.html.parser.TagElement;
+
 
 public class GtoXmlparsing {
 
@@ -33,10 +35,13 @@ public class GtoXmlparsing {
 			String strLine;
 			StringBuilder level1 = new StringBuilder();
 			StringBuilder level2 = new StringBuilder();
-			String taglevel1=null;
+			StringBuilder level3 = new StringBuilder();
 			String attributlevel1 =null;
 			String attributlevel2 =null;
+			String attributlevel3 =null;
+			String taglevel1=null;
 			String taglevel2 = null;
+			String taglevel3 = null;
 
 			while ((strLine = br.readLine()) != null) {
 
@@ -53,8 +58,9 @@ public class GtoXmlparsing {
 					i++;
 					if (taglevel1!=null) {
 						System.out.println("tag in this level is " + taglevel1);
-						level1.append(level2+"</"+taglevel1.toLowerCase()+">\n");
+						level1.append(level2+"</"+taglevel2.toLowerCase() +">\n</"+ taglevel1.toLowerCase()+">\n");
 						level2.delete(0,level2.length());
+						taglevel2=null;
 					}
 				
 					if (lineWorlds[i].equals("HEAD") || lineWorlds[i].equals("TRLR") ) 
@@ -68,7 +74,12 @@ public class GtoXmlparsing {
 					System.out.println("balise level1" + level1);	
 					break;
 				case "1" :
-					
+					if (taglevel2!=null) {
+						System.out.println("tag in this level is " + taglevel2);
+						level2.append(level3+"</"+taglevel2.toLowerCase()+">\n");
+						System.out.println("contenu de level 2 "+level2);
+						level3.delete(0,level3.length());
+					}
 					i++;
 					System.out.println("level 1");
 					taglevel2 = lineWorlds[i].toLowerCase();
@@ -88,12 +99,37 @@ public class GtoXmlparsing {
 					if (attributlevel2!=null)
 						level2.append(attributlevel2);
 					if (contents==null)
-						level2.append("></"+taglevel2+">\n");
+						level2.append(">");
 					else 
-						level2.append(">"+contents+"</"+taglevel2+">\n");
+						level2.append(">"+contents);
 						
 					System.out.println("balise level2" + level2);	
 					
+					break;
+				case "2" : 
+					i++;
+					System.out.println("is in level 3" +lineWorlds[i] );					
+					taglevel3 = lineWorlds[i].toLowerCase();
+					String content = null;
+					for (i++;i<lineWorlds.length;i++){
+						if (lineWorlds[i].startsWith("@") ){
+							attributlevel3 = " id=\""+lineWorlds[i].toLowerCase()+"\"";
+						}else {
+							if (content==null)
+								content = lineWorlds[i].toLowerCase()  ;
+							else 
+								content = content + lineWorlds[i].toLowerCase()  ;
+						}
+						
+					}
+					level3.append("<" + taglevel3 );
+					if (attributlevel3!=null)
+						level3.append(attributlevel3);
+					if (content==null)
+						level3.append("></"+ taglevel3+">\n");
+					else 
+						level3.append(">"+content + "></"+taglevel3+">\n");
+					System.out.println("balise level3 " + level3);	
 					break;
 				}
 	

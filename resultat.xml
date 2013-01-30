@@ -1,28 +1,43 @@
 <?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
 <root>
-<indi id="@i1@">
-<name>john/begood/</name>
+<indi id="@i01@">
+<name>john/doe/</name>
 <sex>m</sex>
+<birt><date>23jan1961></date>
+<plac>australia></plac>
+</birt>
+<deat><date>8jul1988></date>
+<plac>scotland></plac>
+</deat>
 <fams id="@f1@"></fams>
 </indi>
-<indi id="@i2@">
-<name id="@f1@">ada/begood/</name>
-<fams id="@f1@"></fams>
-</indi>
-<indi id="@i3@">
-<name id="@f1@">fred/begood/</name>
-<famc id="@f1@"></famc>
-</indi>
-<indi id="@i4@">
-<name id="@f1@">lea/begood/</name>
+<indi id="@i02@">
+<name id="@f1@">rosanna/housewife/</name>
 <sex id="@f1@">f</sex>
+<birt id="@f1@"><date>15dec1968></date>
+<plac>canada></plac>
+</birt>
+<deat id="@f1@"><date>8jul1988></date>
+<plac>scotland></plac>
+</deat>
+<fams id="@f1@"></fams>
+</indi>
+<indi id="@i03@">
+<name id="@f1@">joe/doe/</name>
+<sex id="@f1@">m</sex>
+<birt id="@f1@"><date>15jun1988></date>
+<plac>unitedstates></plac>
+</birt>
+<deat id="@f1@"><date>8jul1988></date>
+<plac>scotland></plac>
+</deat>
 <famc id="@f1@"></famc>
 </indi>
 <fam id="@f1@">
-<husb id="@i1@"></husb>
-<wife id="@i2@"></wife>
-<chil id="@i3@"></chil>
-<chil id="@i4@"></chil>
+<husb id="@i01@"></husb>
+<wife id="@i02@"></wife>
+<chil id="@i03@"></chil>
+<marr id="@i03@"></marr>
 </fam>
 
 </root>
