@@ -57,6 +57,8 @@ public class GtoXmlparsing {
 				case "0" : 
 					i++;
 					if (taglevel1!=null) {
+						if (level3.length()>0)
+							level2.append(level3);
 						System.out.println("tag in this level is " + taglevel1);
 						level1.append(level2+"</"+taglevel2.toLowerCase() +">\n</"+ taglevel1.toLowerCase()+">\n");
 						level2.delete(0,level2.length());
